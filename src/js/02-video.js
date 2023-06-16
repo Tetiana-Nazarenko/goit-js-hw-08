@@ -22,10 +22,9 @@ player.on('timeupdate', throttled);
 
 const getTime = localStorage.getItem('videoplayer-current-time');
 
-if (!localStorage.getItem('videoplayer-current-time')) {
-  return null;
+if (!getTime) {
+  return;
 }
-console.log(getTime);
 
 player
   .setCurrentTime(getTime)
