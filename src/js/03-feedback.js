@@ -20,9 +20,12 @@ function onTextInput() {
 }
 
 function saveMessage(data) {
+  if (email.value === '' || message.value === '') {
+    return alert('Заповніть всі поля!');
+  }
   data.preventDefault();
-  console.log('Отпровляем форму');
   console.log({ email: email.value, message: message.value });
+  console.log('Отпровляем форму');
   data.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
   console.log('LocalStorage was delete');
